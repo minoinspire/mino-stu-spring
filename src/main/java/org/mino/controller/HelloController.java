@@ -28,7 +28,7 @@ public class HelloController {
         Map<String, Object> info = new HashMap<>();
         info.put("projectName", "Mino Spring Boot 学习项目");
         info.put("version", "1.0.0");
-        info.put("description", "这是一个采用接口形式实现的Spring Boot RESTful API示例");
+        info.put("description", "这是一个采用接口形式实现的Spring Boot RESTful API示例1");
         info.put("features", new String[]{"用户管理", "RESTful API", "分层架构", "接口设计"});
         
         return ApiResponse.success("项目信息查询成功", info);
