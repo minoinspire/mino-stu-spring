@@ -1,0 +1,46 @@
+# 开发环境配置
+spring:
+  datasource:
+    url: jdbc:mysql://rm-bp1kydia743lwv9qoco.sqlserver.rds.aliyuncs.com:3433/mino_spring_stu?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: mino
+    password: Yang1995
+    
+    druid:
+      # 开发环境连接池配置
+      initial-size: 3
+      min-idle: 3
+      max-active: 10
+      max-wait: 30000
+      
+      # 开发环境开启SQL监控
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      
+      # 开发环境开启SQL防火墙
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 1000
+        wall:
+          enabled: true
+
+# 开发环境日志配置
+logging:
+  level:
+    org.mino: DEBUG
+    org.mino.mapper: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    com.alibaba.druid: DEBUG
+
+# 开发环境MyBatis配置
+mybatis:
+  configuration:
+    # 开发环境打印SQL
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    # 开发环境开启驼峰命名
+    map-underscore-to-camel-case: true
